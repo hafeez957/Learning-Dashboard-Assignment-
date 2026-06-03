@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Next-Gen Learning Dashboard",
-  description: "Futuristic student dashboard with bento grid",
+  title: "Learning Dashboard",
+  description: "Next-Gen Learning Dashboard",
 };
 
 export default function RootLayout({
@@ -15,10 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.className} bg-gradient-to-br from-black via-gray-950 to-black min-h-screen`}>
-        {children}
-      </body>
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
