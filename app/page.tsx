@@ -1,5 +1,5 @@
 import { supabase } from './lib/supabase';
-import DashboardContent from './components/dashboard-content';
+import BentoGridWrapper from './BentoGridWrapper';
 
 async function getCourses() {
   const { data, error } = await supabase
@@ -16,5 +16,5 @@ async function getCourses() {
 
 export default async function Home() {
   const courses = await getCourses();
-  return <DashboardContent courses={courses} />;
+  return <BentoGridWrapper courses={courses} />;
 }
