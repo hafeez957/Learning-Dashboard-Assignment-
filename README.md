@@ -60,3 +60,10 @@ A futuristic, highly animated student dashboard built as part of a frontend inte
 - CSS variables for consistent theming
 
 ---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ or 20+
+- npm or yarn
+- Supabase account (free tier)
