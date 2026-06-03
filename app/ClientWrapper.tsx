@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Home, BookOpen, Activity, Settings, Flame, Clock, Target, TrendingUp } from 'lucide-react';
 
@@ -100,10 +100,10 @@ export default function ClientWrapper({ courses }: { courses: Course[] }) {
   const CourseCard = ({ course, index }: { course: Course; index: number }) => {
     const [isInView, setIsInView] = useState(false);
     
-    useState(() => {
-      const timer = setTimeout(() => setIsInView(true), index * 100);
-      return () => clearTimeout(timer);
-    });
+  useEffect(() => {
+  const timer = setTimeout(() => setIsInView(true), index * 100);
+  return () => clearTimeout(timer);
+}, [index]);
 
     const getGradient = () => {
       if (course.progress >= 75) return 'from-emerald-500 to-teal-500';

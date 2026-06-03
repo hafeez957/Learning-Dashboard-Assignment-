@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import BentoGrid from './GlowCard';
+import BentoGrid from './BentoGrid';
 import Sidebar from './Sidebar';
 
 interface Course {
