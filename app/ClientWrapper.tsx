@@ -223,7 +223,7 @@ export default function ClientWrapper({ courses }: { courses: Course[] }) {
             <div className="flex items-start justify-between flex-wrap gap-4">
               <div>
                 <p className="text-purple-400 text-sm font-medium mb-2">Welcome back,</p>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Student Name</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">Hafeez</h2>
                 <p className="text-gray-400">Ready to continue your learning journey?</p>
               </div>
               <div className="flex items-center gap-2 bg-gradient-to-r from-orange-500/20 to-red-500/20 px-4 py-2 rounded-full border border-orange-500/30">
