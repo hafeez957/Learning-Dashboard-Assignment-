@@ -205,6 +205,61 @@ export default function ClientWrapper({ courses }: { courses: Course[] }) {
     );
   }
 
+  if (activeTab === 'settings') {
+  return (
+    <div className="min-h-screen bg-black">
+      <Sidebar />
+      <main className="flex-1 lg:ml-64 p-6 md:p-8">
+        <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
+          Settings
+        </h1>
+
+        <p className="text-gray-500 mb-8">
+          Manage your preferences
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-950 rounded-2xl p-6 border border-gray-800">
+            <h3 className="text-lg font-semibold text-white mb-3">
+              Profile
+            </h3>
+            <p className="text-gray-400">
+              User profile settings and account information.
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-gray-900 to-gray-950 rounded-2xl p-6 border border-gray-800">
+            <h3 className="text-lg font-semibold text-white mb-3">
+              Notifications
+            </h3>
+            <p className="text-gray-400">
+              Configure reminders and learning alerts.
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-gray-900 to-gray-950 rounded-2xl p-6 border border-gray-800">
+            <h3 className="text-lg font-semibold text-white mb-3">
+              Appearance
+            </h3>
+            <p className="text-gray-400">
+              Dark mode enabled.
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-br from-gray-900 to-gray-950 rounded-2xl p-6 border border-gray-800">
+            <h3 className="text-lg font-semibold text-white mb-3">
+              Learning Goals
+            </h3>
+            <p className="text-gray-400">
+              Customize your daily learning targets.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}
+
   // Dashboard View (default)
   return (
     <div className="min-h-screen bg-black">
