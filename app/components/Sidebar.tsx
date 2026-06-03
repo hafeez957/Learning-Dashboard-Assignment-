@@ -4,13 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Home, BookOpen, Activity, Settings, Menu, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-interface NavItem {
-  icon: any;
-  label: string;
-  id: string;
-}
-
-const navItems: NavItem[] = [
+const navItems = [
   { icon: Home, label: 'Dashboard', id: 'dashboard' },
   { icon: BookOpen, label: 'Courses', id: 'courses' },
   { icon: Activity, label: 'Activity', id: 'activity' },
@@ -40,7 +34,7 @@ export default function Sidebar({ activeTab, onTabChange }: SidebarProps) {
       <motion.aside
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+        transition={{ duration: 0.3 }}
         className={`
           fixed left-0 top-0 h-full 
           ${isCollapsed ? 'w-20' : 'w-64'}
@@ -60,27 +54,18 @@ export default function Sidebar({ activeTab, onTabChange }: SidebarProps) {
                 <span className="text-white font-bold text-xl">L</span>
               </div>
               {!isCollapsed && (
-                <motion.span 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="font-bold text-lg bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
-                >
+                <span className="font-bold text-lg bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                   LearnHub
-                </motion.span>
+                </span>
               )}
             </div>
           </div>
 
           {/* Navigation items */}
           <nav className="flex-1 p-4 space-y-2">
-            {navItems.map((item, index) => (
-              <motion.button
+            {navItems.map((item) => (
+              <button
                 key={item.id}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.02, x: 5 }}
-                whileTap={{ scale: 0.98 }}
                 onClick={() => onTabChange(item.id)}
                 className={`
                   w-full flex items-center gap-3 px-4 py-3 rounded-xl
@@ -96,7 +81,7 @@ export default function Sidebar({ activeTab, onTabChange }: SidebarProps) {
                 {!isCollapsed && (
                   <span className="text-sm font-medium">{item.label}</span>
                 )}
-              </motion.button>
+              </button>
             ))}
           </nav>
 
